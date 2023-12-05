@@ -1,0 +1,14 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        i, j = 0, len(s)-1
+        while s[i] == ' ':
+            i+=1
+        while s[j] == ' ':
+            j-=1
+        s = s[i:j+1]
+
+        words = s.split()
+        new_order = []
+        for i in range(len(words)-1,-1,-1):
+            new_order.append(words[i])
+        return (' ').join(new_order)
